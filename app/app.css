@@ -198,6 +198,38 @@ button {
 
 
 .hero {
-  background: linear-gradient(347.68deg, #FDE1FE -7.11%, #FDD6FE -4.44%, #FE8EFF 18.22%, #FE71FF 27.55%, #EC70FE 34.21%, #BE6DFC 48.67%, #7468FA 69.6%, #4D65F8 88.8%, #24D6F4 119.51%);
-
+  background-image: url('/images/gradient.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+/* Custom Cursor Styles */
+* {
+  cursor: none;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #FE71FF, #A96BFB, #4D65F8);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease-out;
+  box-shadow: 0 0 15px rgba(254, 113, 255, 0.6);
+}
+
+.custom-cursor.hover {
+  transform: scale(1.5);
+  background: radial-gradient(circle, #4D65F8, #A96BFB, #FE71FF);
+  box-shadow: 0 0 25px rgba(77, 101, 248, 0.8);
+}
+
+.custom-cursor.click {
+  transform: scale(0.8);
+}
+
+

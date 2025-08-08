@@ -28,8 +28,8 @@ export default function Home() {
     <>
       <HeaderNav />
 
-      <section className="hero p-8 lg:p-20 h-[100vh] relative">
-        <div className="lg:w-[60%] max-w-[700px] mx-auto mt-44 ">
+      <section className="hero p-8 lg:p-20 lg:h-[100vh] h-[70vh] relative">
+        <div className="lg:w-[60%] max-w-[700px] mx-auto lg:mt-44 mt-32">
           <h1 className="text-2xl lg:text-4xl relative lg:z-50 text-[#0B1023] font-bold leading-tight">
             <span
               className={`transition-all duration-300 ${activeOverlay && activeOverlay !== "motion" ? "opacity-30 blur-sm" : ""}`}
@@ -106,14 +106,14 @@ export default function Home() {
         {activeOverlay && (
           <div className="fixed bg-[#0B1023] w-full h-full left-0 top-0 z-40 transition-all duration-300">
             {activeOverlay === "motion" && (
-              <div className="grid grid-cols-3 gap-10 my-32 mx-10">
+              <div className="grid lg:grid-cols-3 gap-10 lg:my-32 my-14 mx-10">
                 <img
                   className="rounded-xl"
                   src="/images/gifs/motion/001.gif"
                   alt=""
                 />
                 <img
-                  className="rounded-xl mt-44"
+                  className="rounded-xl lg:mt-44"
                   src="/images/gifs/motion/002.gif"
                   alt=""
                 />
@@ -125,9 +125,9 @@ export default function Home() {
               </div>
             )}
             {activeOverlay === "transforming" && (
-              <div className="grid grid-cols-3 gap-10 my-20 mx-10">
+              <div className="grid lg:grid-cols-3 gap-10 lg:my-32 my-14 mx-10">
                 <img
-                  className="rounded-xl mt-52"
+                  className="rounded-xl lg:mt-52"
                   src="/images/gifs/transforming-stories/001.gif"
                   alt=""
                 />
@@ -137,21 +137,21 @@ export default function Home() {
                   alt=""
                 />
                 <img
-                  className="rounded-xl mt-32"
+                  className="rounded-xl lg:mt-32"
                   src="/images/gifs/transforming-stories/002.gif"
                   alt=""
                 />
               </div>
             )}
             {activeOverlay === "visual" && (
-              <div className="grid grid-cols-3 gap-10 my-20 mx-10">
+              <div className="grid lg:grid-cols-3 gap-10 lg:my-32 my-14 mx-10">
                 <img
                   className="rounded-xl"
                   src="/images/gifs/visual-experience/001.gif"
                   alt=""
                 />
                 <img
-                  className="rounded-xl mt-72"
+                  className="rounded-xl lg:mt-72"
                   src="/images/gifs/visual-experience/002.gif"
                   alt=""
                 />
@@ -340,9 +340,16 @@ export default function Home() {
               </p>
               <div className="bg-white mx-4 rounded-full w-4 h-4"></div>
               <p className="text-2xl lg:text-4xl mx-2 font-medium bg-gradient-to-r from-[#FE71FF] via-[#A96BFB] to-[#4D65F8] bg-clip-text text-transparent">
-                Creative
+                Creative Direction
               </p>
               <div className="bg-white mx-4  rounded-full w-4 h-4"></div>
+              <p className="text-2xl lg:text-4xl mx-2 font-medium bg-gradient-to-r from-[#FE71FF] via-[#A96BFB] to-[#4D65F8] bg-clip-text text-transparent">
+                Animation
+              </p>
+              <div className="bg-white mx-4  rounded-full w-4 h-4"></div>
+              <p className="text-2xl lg:text-4xl mx-2 font-medium bg-gradient-to-r from-[#FE71FF] via-[#A96BFB] to-[#4D65F8] bg-clip-text text-transparent">
+                Branding
+              </p>
             </Marquee>
           </div>
         </div>

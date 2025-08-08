@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import { useState, useEffect } from "react";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -42,6 +43,94 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 5000); // 3 second loader
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="fixed inset-0 bg-[#0B1023] flex items-center justify-center z-50">
+        <div className="text-center">
+          {/* AIM Letters Animation */}
+          {/* <div className="flex items-center justify-center space-x-4 mb-8">
+            <span className="text-8xl font-neulis-black text-white animate-bounce animate-letterGlow" style={{ 
+              animationDelay: '0s', 
+              color: '#FE71FF' 
+            }}>
+              A
+            </span>
+            <span className="text-8xl font-neulis-black text-white animate-bounce animate-letterGlow" style={{ 
+              animationDelay: '0.2s', 
+              color: '#A96BFB' 
+            }}>
+              I
+            </span>
+            <span className="text-8xl font-neulis-black text-white animate-bounce animate-letterGlow" style={{ 
+              animationDelay: '0.4s', 
+              color: '#4D65F8' 
+            }}>
+              M
+            </span>
+          </div> */}
+
+          {/* Logo Animation */}
+          {/* <div className="mb-6 flex justify-center">
+            <div className="w-32 h-32 rounded-full border-4 animate-gradientSpin animate-logoFloat animate-pulseGlow flex items-center justify-center">
+              <img 
+                src="/images/logo.svg" 
+                alt="AIM VFX Logo" 
+                className="w-20 h-20 animate-spin"
+                style={{ animationDuration: '4s' }}
+              />
+            </div>
+          </div> */}
+
+          {/* Loading Text */}
+          <img
+            src="/images/logo.svg"
+            alt="AIM VFX Logo"
+            className="w-20 h-20 mx-auto"
+            // style={{ animationDuration: "4s" }}
+          />
+          <p className="text-white text-xl font-neulis-medium mb-4 animate-pulse">
+            Creating Visual Magic...
+          </p>
+
+          {/* Progress Dots */}
+          <div className="flex justify-center space-x-2">
+            <div
+              className="w-4 h-4 rounded-full animate-bounce"
+              style={{
+                backgroundColor: "#FE71FF",
+                animationDelay: "0s",
+              }}
+            ></div>
+            <div
+              className="w-4 h-4 rounded-full animate-bounce"
+              style={{
+                backgroundColor: "#A96BFB",
+                animationDelay: "0.1s",
+              }}
+            ></div>
+            <div
+              className="w-4 h-4 rounded-full animate-bounce"
+              style={{
+                backgroundColor: "#4D65F8",
+                animationDelay: "0.2s",
+              }}
+            ></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return <Outlet />;
 }
 

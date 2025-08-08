@@ -203,7 +203,7 @@ export default function Home() {
                   alt=""
                   className="w-full max-w-xs lg:max-w-none"
                 />
-                <p className="mt-3 text-sm lg:text-base">Our Desiree</p>
+                <p className="mt-3 text-sm lg:text-base">Streetz Food Naija</p>
               </div>
               <div className="mx-2 lg:mx-4">
                 <img
@@ -211,7 +211,15 @@ export default function Home() {
                   alt=""
                   className="w-full max-w-xs lg:max-w-none"
                 />
-                <p className="mt-3 text-sm lg:text-base">Streetz Food Naija</p>
+                <p className="mt-3 text-sm lg:text-base">Our Desiree</p>
+              </div>
+              <div className="mx-2 lg:mx-4">
+                <img
+                  src="/images/works-3.png"
+                  alt=""
+                  className="w-full max-w-xs lg:max-w-none"
+                />
+                <p className="mt-3 text-sm lg:text-base">CrustndCo</p>
               </div>
             </Marquee>
           </div>

@@ -1,13 +1,235 @@
+import HeaderNav from "~/components/HeaderNav";
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import FooterNav from "~/components/FooterNav";
+import QuoteCard from "~/components/QuoteCard";
+import Marquee from "react-fast-marquee";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Aim Vfx" },
+    { name: "description", content: "Astonish must shine" },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  const Clients = [
+    "CrustnCo",
+    "Roqqu",
+    "Raven Bank",
+    "Our Desiree",
+    "Foodbay",
+    "African Creator Summit",
+  ];
+  return (
+    <>
+      <HeaderNav />
+
+      <section className="hero p-8 lg:p-20"></section>
+      <section className="text-[#0B1023]">
+        <div>
+          <div className="flex max-w-7xl mt-10 mx-auto justify-between px-4 lg:px-0">
+            <button
+              className="p-2 rounded-full text-white px-4 lg:px-6 font-medium mt-2 transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 active:scale-95 flex items-center gap-2 text-sm lg:text-base"
+              style={{
+                background: "linear-gradient(45deg, #FE71FF, #4D65F8)",
+              }}
+            >
+              see all works
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-arrow-up-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                />
+              </svg>
+            </button>
+            <h1 className="text-2xl lg:text-4xl font-bold mr-4 my-auto lg:mr-20">
+              Selected Works
+            </h1>
+          </div>
+
+          <div className="my-10 lg:my-20">
+            <Marquee autoFill pauseOnHover >
+              <div className="mx-2 lg:mx-4">
+                <img
+                  src="/images/works-1.png"
+                  alt=""
+                  className="w-full max-w-xs lg:max-w-none"
+                />
+                <p className="mt-3 text-sm lg:text-base">Our Desiree</p>
+              </div>
+              <div className="mx-2 lg:mx-4">
+                <img
+                  src="/images/works-2.png"
+                  alt=""
+                  className="w-full max-w-xs lg:max-w-none"
+                />
+                <p className="mt-3 text-sm lg:text-base">Streetz Food Naija</p>
+              </div>
+            </Marquee>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 lg:px-0">
+          <div className="flex justify-between">
+            <button
+              className="p-2 rounded-full text-white px-4 lg:px-6 font-medium mt-2 transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 active:scale-95 flex items-center gap-2 text-sm lg:text-base"
+              style={{
+                background: "linear-gradient(45deg, #FE71FF, #4D65F8)",
+              }}
+            >
+              who we are
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-arrow-up-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                />
+              </svg>
+            </button>
+            <div></div>
+          </div>
+
+          <div className="w-full lg:my-0 my-6 lg:w-[43%] ml-auto mr-4 lg:mr-52 px-4 lg:px-0">
+            <p className="text-base lg:text-lg font-medium">
+              Aim VFX is a creative powerhouse dedicated to redefining how
+              brands connect with their audiences. Specializing in crafting
+              motion identities, we deliver work that isn't just visually
+              captivating but also intentional, strategic, and deeply rooted in
+              what makes each brand unique.
+            </p>
+          </div>
+          <div className="flex flex-col lg:flex-row justify-between">
+            <div className="mx-4 lg:mx-20">
+              <img
+                src="/images/frame.png"
+                alt=""
+                className="w-full max-w-md lg:max-w-none"
+              />
+            </div>
+            <div className="w-full lg:w-[35%] mt-8 lg:mt-20 px-4 lg:px-0">
+              <p className="text-[#A6A6A6] text-sm lg:text-base">
+                What sets Astonish apart is the ability to seamlessly integrate
+                with brand teams, working as true partners to develop motion
+                systems, guidelines, and toolkits that ensure consistency across
+                every platform. Every project is designed to help brands not
+                just scale but thrive in today's fast-paced digital culture.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="max-w-6xl mx-auto p-8 lg:p-20 pb-0">
+          <div className="flex justify-between px-4 lg:px-0">
+            <div></div>
+            <h1 className="text-2xl lg:text-4xl font-bold">Our Clients</h1>
+          </div>
+        </div>
+        <div className="my-10 lg:my-20">
+          <Marquee autoFill>
+            {Clients.map((client, index) => (
+              <p
+                key={index}
+                className="px-6 lg:px-12 text-base lg:text-lg font-medium"
+              >
+                {client}
+              </p>
+            ))}
+          </Marquee>
+        </div>
+      </section>
+      <section className="bg-[#0B1023] relative">
+        <div className="max-w-6xl text-white mx-auto p-4 lg:p-20">
+          <div className="flex justify-between px-4 lg:px-0">
+            <button
+              className="p-2 rounded-full px-4 lg:px-6 font-medium mt-2 transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 active:scale-95 flex items-center gap-2 text-sm lg:text-base"
+              style={{
+                background: "linear-gradient(45deg, #FE71FF, #4D65F8)",
+              }}
+            >
+              see all services
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-arrow-up-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                />
+              </svg>
+            </button>
+            <h1 className="text-2xl lg:text-4xl my-auto font-bold">
+              Our Service
+            </h1>
+          </div>
+          <p className="text-lg lg:text-xl w-full lg:w-[60%] leading-8 ml-auto my-8 px-4 lg:px-0">
+            Exceptional work requires a meticulous process from the core idea
+            all the way through to the final delivery.
+          </p>
+          <div className="mt-18">
+            <img
+              className="mx-auto lg:w-auto w-[80%] max-w-2xl lg:max-w-none"
+              src="/images/frame-2.png"
+              alt=""
+            />
+          </div>
+          <div className="absolute left-0 right-0 top-96 h-auto">
+            <Marquee loop={0} autoFill className="!overflow-hidden ">
+              <p className="text-2xl lg:text-3xl mx-2 font-medium bg-gradient-to-r from-[#FE71FF] via-[#A96BFB] to-[#4D65F8] bg-clip-text text-transparent">
+                End to End Production
+              </p>
+              <div className="bg-[#0B1023] mx-4 rounded-full w-4 h-4"></div>
+              <p className="text-2xl lg:text-4xl mx-2 font-medium bg-gradient-to-r from-[#FE71FF] via-[#A96BFB] to-[#4D65F8] bg-clip-text text-transparent">
+                Motion Design
+              </p>
+              <div className="bg-white mx-4 rounded-full w-4 h-4"></div>
+              <p className="text-2xl lg:text-4xl mx-2 font-medium bg-gradient-to-r from-[#FE71FF] via-[#A96BFB] to-[#4D65F8] bg-clip-text text-transparent">
+                Creative
+              </p>
+              <div className="bg-[#0B1023] mx-4  rounded-full w-4 h-4"></div>
+            </Marquee>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 lg:px-0">
+          <div className="mx-auto max-w-lg text-white py-16 lg:py-32">
+            <h1 className="text-2xl lg:text-4xl font-bold leading-normal">
+              Become a friend of Astonish and join the adventure
+            </h1>
+            <div className="text-center">
+              <button
+                className="p-4 rounded-full px-10 font-medium mt-6 mx-auto text-[#0B1023] transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 active:scale-95"
+                style={{
+                  background:
+                    "linear-gradient(45deg, #FFFFFF, #FE71FF, #A96BFB, #4D65F8)",
+                }}
+              >
+                Get in touch
+              </button>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0">
+            <div></div>
+            <div>
+              <QuoteCard />
+            </div>
+          </div>
+        </div>
+      </section>
+      <FooterNav />
+    </>
+  );
 }

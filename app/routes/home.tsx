@@ -32,7 +32,7 @@ export default function Home() {
         <div className="lg:w-[60%] max-w-[700px] mx-auto lg:mt-44 mt-32">
           <h1 className="text-2xl lg:text-4xl relative lg:z-50 text-[#0B1023] font-bold leading-tight">
             <span
-              className={`transition-all duration-300 ${activeOverlay && activeOverlay !== "motion" ? "opacity-30 blur-sm" : ""}`}
+              className={`transition-all duration-300 ${activeOverlay ? "opacity-30 blur-sm" : ""}`}
             >
               We create{" "}
             </span>
@@ -40,7 +40,7 @@ export default function Home() {
               className={`underline cursor-pointer hover:text-[#FE71FF] transition-all duration-300 ${
                 activeOverlay === "motion"
                   ? "text-[#FE71FF] bg-[#FE71FF]/10 px-1 rounded scale-105"
-                  : activeOverlay && activeOverlay !== "motion"
+                  : activeOverlay
                     ? "opacity-30 blur-sm"
                     : ""
               }`}
@@ -50,7 +50,7 @@ export default function Home() {
               motion
             </span>
             <span
-              className={`transition-all duration-300 ${activeOverlay && activeOverlay !== "transforming" ? "opacity-30 blur-sm" : ""}`}
+              className={`transition-all duration-300 ${activeOverlay ? "opacity-30 blur-sm" : ""}`}
             >
               {" "}
               that astonishes,{" "}
@@ -69,7 +69,7 @@ export default function Home() {
               transforming stories
             </span>
             <span
-              className={`transition-all duration-300 ${activeOverlay && activeOverlay !== "visual" ? "opacity-30 blur-sm" : ""}`}
+              className={`transition-all duration-300 ${activeOverlay ? "opacity-30 blur-sm" : ""}`}
             >
               {" "}
               into unforgettable{" "}
@@ -358,6 +358,7 @@ export default function Home() {
               <p className="text-2xl lg:text-4xl mx-2 font-medium bg-gradient-to-r from-[#FE71FF] via-[#A96BFB] to-[#4D65F8] bg-clip-text text-transparent">
                 Branding
               </p>
+              <div className="bg-white mx-4  rounded-full w-4 h-4"></div>
             </Marquee>
           </div>
         </div>

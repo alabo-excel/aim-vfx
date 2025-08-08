@@ -99,7 +99,7 @@ export default function App() {
             // style={{ animationDuration: "4s" }}
           />
           <p className="text-white text-xl font-neulis-medium mb-4 animate-pulse">
-            Creating Visual Magic...
+            Acing the Impossible
           </p>
 
           {/* Progress Dots */}

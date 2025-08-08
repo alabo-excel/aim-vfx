@@ -3,6 +3,7 @@ import type { Route } from "./+types/home";
 import FooterNav from "~/components/FooterNav";
 import QuoteCard from "~/components/QuoteCard";
 import Marquee from "react-fast-marquee";
+import { useState } from "react";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -12,6 +13,8 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  const [activeOverlay, setActiveOverlay] = useState<string | null>(null);
+
   const Clients = [
     "CrustnCo",
     "Roqqu",
@@ -20,11 +23,149 @@ export default function Home() {
     "Foodbay",
     "African Creator Summit",
   ];
+
   return (
     <>
       <HeaderNav />
 
-      <section className="hero p-8 lg:p-20"></section>
+      <section className="hero p-8 lg:p-20 h-[100vh] relative">
+        <div className="lg:w-[60%] max-w-[700px] mx-auto mt-44 ">
+          <h1 className="text-2xl lg:text-4xl relative lg:z-50 text-[#0B1023] font-bold leading-tight">
+            <span
+              className={`transition-all duration-300 ${activeOverlay && activeOverlay !== "motion" ? "opacity-30 blur-sm" : ""}`}
+            >
+              We create{" "}
+            </span>
+            <span
+              className={`underline cursor-pointer hover:text-[#FE71FF] transition-all duration-300 ${
+                activeOverlay === "motion"
+                  ? "text-[#FE71FF] bg-[#FE71FF]/10 px-1 rounded scale-105"
+                  : activeOverlay && activeOverlay !== "motion"
+                    ? "opacity-30 blur-sm"
+                    : ""
+              }`}
+              onMouseEnter={() => setActiveOverlay("motion")}
+              onMouseLeave={() => setActiveOverlay(null)}
+            >
+              motion
+            </span>
+            <span
+              className={`transition-all duration-300 ${activeOverlay && activeOverlay !== "transforming" ? "opacity-30 blur-sm" : ""}`}
+            >
+              {" "}
+              that astonishes,{" "}
+            </span>
+            <span
+              className={`underline cursor-pointer hover:text-[#4D65F8] transition-all duration-300 ${
+                activeOverlay === "transforming"
+                  ? "text-[#4D65F8] bg-[#4D65F8]/10 px-1 rounded scale-105"
+                  : activeOverlay && activeOverlay !== "transforming"
+                    ? "opacity-30 blur-sm"
+                    : ""
+              }`}
+              onMouseEnter={() => setActiveOverlay("transforming")}
+              onMouseLeave={() => setActiveOverlay(null)}
+            >
+              transforming stories
+            </span>
+            <span
+              className={`transition-all duration-300 ${activeOverlay && activeOverlay !== "visual" ? "opacity-30 blur-sm" : ""}`}
+            >
+              {" "}
+              into unforgettable{" "}
+            </span>
+            <span
+              className={`underline cursor-pointer hover:text-[#A96BFB] transition-all duration-300 ${
+                activeOverlay === "visual"
+                  ? "text-[#A96BFB] bg-[#A96BFB]/10 px-1 rounded scale-105"
+                  : activeOverlay && activeOverlay !== "visual"
+                    ? "opacity-30 blur-sm"
+                    : ""
+              }`}
+              onMouseEnter={() => setActiveOverlay("visual")}
+              onMouseLeave={() => setActiveOverlay(null)}
+            >
+              visual experiences
+            </span>
+            <span
+              className={`transition-all duration-300 ${activeOverlay ? "opacity-30 blur-sm" : ""}`}
+            >
+              .
+            </span>
+          </h1>
+
+          <div className="lg:w-[30%] mt-8 mx-auto">
+            <p className="text-white">
+              Watching how light shifts, water flows, or objects interact in
+              real life often sparks ideas for animation
+            </p>
+          </div>
+        </div>
+
+        {/* Dynamic Overlays */}
+        {activeOverlay && (
+          <div className="fixed bg-[#0B1023] w-full h-full left-0 top-0 z-40 transition-all duration-300">
+            {activeOverlay === "motion" && (
+              <div className="grid grid-cols-3 gap-10 my-32 mx-10">
+                <img
+                  className="rounded-xl"
+                  src="/images/gifs/motion/001.gif"
+                  alt=""
+                />
+                <img
+                  className="rounded-xl mt-44"
+                  src="/images/gifs/motion/002.gif"
+                  alt=""
+                />
+                <img
+                  className="rounded-xl"
+                  src="/images/gifs/motion/003.gif"
+                  alt=""
+                />
+              </div>
+            )}
+            {activeOverlay === "transforming" && (
+              <div className="grid grid-cols-3 gap-10 my-20 mx-10">
+                <img
+                  className="rounded-xl mt-52"
+                  src="/images/gifs/transforming-stories/001.gif"
+                  alt=""
+                />
+                <img
+                  className="rounded-xl "
+                  src="/images/gifs/transforming-stories/003.gif"
+                  alt=""
+                />
+                <img
+                  className="rounded-xl mt-32"
+                  src="/images/gifs/transforming-stories/002.gif"
+                  alt=""
+                />
+              </div>
+            )}
+            {activeOverlay === "visual" && (
+              <div className="grid grid-cols-3 gap-10 my-20 mx-10">
+                <img
+                  className="rounded-xl"
+                  src="/images/gifs/visual-experience/001.gif"
+                  alt=""
+                />
+                <img
+                  className="rounded-xl mt-72"
+                  src="/images/gifs/visual-experience/002.gif"
+                  alt=""
+                />
+                <img
+                  className="rounded-xl"
+                  src="/images/gifs/visual-experience/003.gif"
+                  alt=""
+                />
+              </div>
+            )}
+          </div>
+        )}
+      </section>
+
       <section className="text-[#0B1023]">
         <div>
           <div className="flex max-w-7xl mt-10 mx-auto justify-between px-4 lg:px-0">
@@ -55,7 +196,7 @@ export default function Home() {
           </div>
 
           <div className="my-10 lg:my-20">
-            <Marquee autoFill pauseOnHover >
+            <Marquee autoFill pauseOnHover>
               <div className="mx-2 lg:mx-4">
                 <img
                   src="/images/works-1.png"
@@ -148,8 +289,9 @@ export default function Home() {
           </Marquee>
         </div>
       </section>
+
       <section className="bg-[#0B1023] relative">
-        <div className="max-w-6xl text-white mx-auto p-4 lg:p-20">
+        <div className="max-w-6xl text-white mx-auto p-4 lg:px-20">
           <div className="flex justify-between px-4 lg:px-0">
             <button
               className="p-2 rounded-full px-4 lg:px-6 font-medium mt-2 transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 active:scale-95 flex items-center gap-2 text-sm lg:text-base"
@@ -180,10 +322,10 @@ export default function Home() {
             Exceptional work requires a meticulous process from the core idea
             all the way through to the final delivery.
           </p>
-          <div className="mt-18">
+          <div className="lg:mt-32 mt-24">
             <img
-              className="mx-auto lg:w-auto w-[80%] max-w-2xl lg:max-w-none"
-              src="/images/frame-2.png"
+              className="mx-auto lg:w-auto w-[80%] rounded-xl max-w-2xl lg:max-w-none"
+              src="/images/gifs/footer.gif"
               alt=""
             />
           </div>
@@ -192,7 +334,7 @@ export default function Home() {
               <p className="text-2xl lg:text-3xl mx-2 font-medium bg-gradient-to-r from-[#FE71FF] via-[#A96BFB] to-[#4D65F8] bg-clip-text text-transparent">
                 End to End Production
               </p>
-              <div className="bg-[#0B1023] mx-4 rounded-full w-4 h-4"></div>
+              <div className="bg-white mx-4 rounded-full w-4 h-4"></div>
               <p className="text-2xl lg:text-4xl mx-2 font-medium bg-gradient-to-r from-[#FE71FF] via-[#A96BFB] to-[#4D65F8] bg-clip-text text-transparent">
                 Motion Design
               </p>
@@ -200,7 +342,7 @@ export default function Home() {
               <p className="text-2xl lg:text-4xl mx-2 font-medium bg-gradient-to-r from-[#FE71FF] via-[#A96BFB] to-[#4D65F8] bg-clip-text text-transparent">
                 Creative
               </p>
-              <div className="bg-[#0B1023] mx-4  rounded-full w-4 h-4"></div>
+              <div className="bg-white mx-4  rounded-full w-4 h-4"></div>
             </Marquee>
           </div>
         </div>
@@ -229,6 +371,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <FooterNav />
     </>
   );

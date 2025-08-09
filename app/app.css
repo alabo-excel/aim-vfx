@@ -217,7 +217,7 @@ button {
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
   transition: transform 0.1s ease-out;
   box-shadow: 0 0 15px rgba(254, 113, 255, 0.6);
 }

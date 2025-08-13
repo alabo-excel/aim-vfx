@@ -4,6 +4,8 @@ import FooterNav from "~/components/FooterNav";
 import QuoteCard from "~/components/QuoteCard";
 import Marquee from "react-fast-marquee";
 import { useState } from "react";
+import { Link } from "react-router";
+import { worksData } from "~/data/works";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -197,64 +199,18 @@ export default function Home() {
 
           <div className="my-10 lg:my-20">
             <Marquee autoFill pauseOnHover>
-              <div className="mx-2  lg:mx-4">
-                <img
-                  src="/images/gifs/transforming-stories/002.gif"
-                  alt=""
-                  className="w-full lg:h-96 h-52 max-w-xs rounded-xl lg:max-w-none"
-                />
-                <p className="mt-3 text-sm lg:text-base">Streetz Food Naija</p>
-              </div>
-              <div className="mx-2 lg:mx-4">
-                <img
-                  src="/images/gifs/transforming-stories/001.gif"
-                  alt=""
-                  className="w-full lg:h-96 h-52 max-w-xs rounded-xl lg:max-w-none"
-                />
-                <p className="mt-3 text-sm lg:text-base">Our Desiree</p>
-              </div>
-              <div className="mx-2 lg:mx-4">
-                <img
-                  src="/images/gifs/crust-and-co.gif"
-                  alt=""
-                  className="w-full lg:h-96 h-52 max-w-xs rounded-xl lg:max-w-none"
-                />
-                <p className="mt-3 text-sm lg:text-base">CrustndCo</p>
-              </div>
-              <div className="mx-2  lg:mx-4">
-                <img
-                  src="/images/gifs/motion/003.gif"
-                  alt=""
-                  className="w-full lg:h-96 h-52 max-w-xs rounded-xl lg:max-w-none"
-                />
-                <p className="mt-3 text-sm lg:text-base">Roqqu</p>
-              </div>
-              <div className="mx-2  lg:mx-4">
-                <img
-                  src="/images/gifs/future-of-education.gif"
-                  alt=""
-                  className="w-full lg:h-96 h-52 max-w-xs rounded-xl lg:max-w-none"
-                />
-                <p className="mt-3 text-sm lg:text-base">
-                  Future of Education Summit
-                </p>
-              </div>
-              <div className="mx-2  lg:mx-4">
-                <img
-                  src="/images/works-4.png"
-                  alt=""
-                  className="w-full lg:h-96 h-52 max-w-xs rounded-xl lg:max-w-none"
-                />
-                <p className="mt-3 text-sm lg:text-base">NBN Lab</p>
-              </div>
-              <div className="mx-2  lg:mx-4">
-                <img
-                  src="/images/works-5.png"
-                  alt=""
-                  className="w-full lg:h-96 h-52 max-w-xs rounded-xl lg:max-w-none"
-                />
-                <p className="mt-3 text-sm lg:text-base">Ololade Branding</p>
-              </div>
+              {worksData.slice(0, 6).map((work, index) => (
+                <div key={work.id} className="mx-2 lg:mx-4">
+                  <Link to={`/work?slug=${work.slug}`} className="block group">
+                    <img
+                      src={work.hero_image}
+                      alt={work.title}
+                      className="w-full lg:h-96 h-52 max-w-xs rounded-xl lg:max-w-none object-cover"
+                    />
+                    <p className="mt-3 text-sm lg:text-base">{work.title}</p>
+                  </Link>
+                </div>
+              ))}
             </Marquee>
           </div>
         </div>

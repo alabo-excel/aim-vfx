@@ -197,29 +197,63 @@ export default function Home() {
 
           <div className="my-10 lg:my-20">
             <Marquee autoFill pauseOnHover>
-              <div className="mx-2 lg:mx-4">
+              <div className="mx-2  lg:mx-4">
                 <img
-                  src="/images/works-1.png"
+                  src="/images/gifs/transforming-stories/002.gif"
                   alt=""
-                  className="w-full max-w-xs lg:max-w-none"
+                  className="w-full lg:h-96 h-52 max-w-xs rounded-xl lg:max-w-none"
                 />
                 <p className="mt-3 text-sm lg:text-base">Streetz Food Naija</p>
               </div>
               <div className="mx-2 lg:mx-4">
                 <img
-                  src="/images/works-2.png"
+                  src="/images/gifs/transforming-stories/001.gif"
                   alt=""
-                  className="w-full max-w-xs lg:max-w-none"
+                  className="w-full lg:h-96 h-52 max-w-xs rounded-xl lg:max-w-none"
                 />
                 <p className="mt-3 text-sm lg:text-base">Our Desiree</p>
               </div>
               <div className="mx-2 lg:mx-4">
                 <img
-                  src="/images/works-3.png"
+                  src="/images/gifs/crust-and-co.gif"
                   alt=""
-                  className="w-full max-w-xs lg:max-w-none"
+                  className="w-full lg:h-96 h-52 max-w-xs rounded-xl lg:max-w-none"
                 />
                 <p className="mt-3 text-sm lg:text-base">CrustndCo</p>
+              </div>
+              <div className="mx-2  lg:mx-4">
+                <img
+                  src="/images/gifs/motion/003.gif"
+                  alt=""
+                  className="w-full lg:h-96 h-52 max-w-xs rounded-xl lg:max-w-none"
+                />
+                <p className="mt-3 text-sm lg:text-base">Roqqu</p>
+              </div>
+              <div className="mx-2  lg:mx-4">
+                <img
+                  src="/images/gifs/future-of-education.gif"
+                  alt=""
+                  className="w-full lg:h-96 h-52 max-w-xs rounded-xl lg:max-w-none"
+                />
+                <p className="mt-3 text-sm lg:text-base">
+                  Future of Education Summit
+                </p>
+              </div>
+              <div className="mx-2  lg:mx-4">
+                <img
+                  src="/images/works-4.png"
+                  alt=""
+                  className="w-full lg:h-96 h-52 max-w-xs rounded-xl lg:max-w-none"
+                />
+                <p className="mt-3 text-sm lg:text-base">NBN Lab</p>
+              </div>
+              <div className="mx-2  lg:mx-4">
+                <img
+                  src="/images/works-5.png"
+                  alt=""
+                  className="w-full lg:h-96 h-52 max-w-xs rounded-xl lg:max-w-none"
+                />
+                <p className="mt-3 text-sm lg:text-base">Ololade Branding</p>
               </div>
             </Marquee>
           </div>

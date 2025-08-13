@@ -198,8 +198,8 @@ export default function Home() {
           </div>
 
           <div className="my-10 lg:my-20">
-            <Marquee autoFill pauseOnHover>
-              {worksData.slice(0, 6).map((work, index) => (
+            <Marquee autoFill pauseOnHover speed={150}>
+              {worksData.map((work, index) => (
                 <div key={work.id} className="mx-2 lg:mx-4">
                   <Link to={`/work?slug=${work.slug}`} className="block group">
                     <img

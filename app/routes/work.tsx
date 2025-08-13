@@ -4,6 +4,7 @@ import HeaderNav from "~/components/HeaderNav";
 import FooterNav from "~/components/FooterNav";
 import { VimeoPlayer } from "~/components/VimeoPlayer";
 import { worksData, type Work } from "~/data/works";
+import Marquee from "react-fast-marquee";
 
 export function meta() {
   return [
@@ -123,13 +124,68 @@ export default function WorkDetail() {
               className={`rounded-2xl md:h-96 object-cover w-full ${work.images.length === 3 && index === work.images.length - 1 && "col-span-2"}`}
             />
           ))}
-          <img src={work.hero_image} className="col-span-2 w-full rounded-2xl overflow-hidden" alt="" />
+          <img
+            src={work.hero_image}
+            className="col-span-2 w-full rounded-2xl overflow-hidden"
+            alt=""
+          />
         </div>
         <div className="lg:text-5xl text-3xl font-medium my-10 leading-normal">
           Love what we did? <br /> Let’s collaborate!
         </div>
       </section>
-          
+      <div>
+        <div className="flex max-w-7xl mt-10 mx-auto justify-between px-4 lg:px-0">
+          <button
+            className="p-2 rounded-full text-white px-4 lg:px-6 font-medium mt-2 transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 active:scale-95 flex items-center gap-2 text-sm lg:text-base"
+            style={{
+              background: "linear-gradient(45deg, #FE71FF, #4D65F8)",
+            }}
+          >
+            Related Projects
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              className="bi bi-arrow-up-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fillRule="evenodd"
+                d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+              />
+            </svg>
+          </button>
+          {/* <h1 className="text-2xl lg:text-4xl font-bold mr-4 my-auto lg:mr-20">
+            Selected Works
+          </h1> */}
+        </div>
+
+        <div className="my-10 lg:my-20">
+          <Marquee autoFill pauseOnHover speed={150}>
+            {worksData
+              .filter((w) => w.slug !== work.slug)
+              .map((workItem, index) => (
+                <div key={workItem.id} className="mx-2 lg:mx-4">
+                  <Link
+                    to={`/work?slug=${workItem.slug}`}
+                    className="block group"
+                  >
+                    <img
+                      src={workItem.hero_image}
+                      alt={workItem.title}
+                      className="w-full lg:h-96 h-52 max-w-xs rounded-xl lg:max-w-none object-cover"
+                    />
+                    <p className="mt-3 text-sm lg:text-base">
+                      {workItem.title}
+                    </p>
+                  </Link>
+                </div>
+              ))}
+          </Marquee>
+        </div>
+      </div>
       <FooterNav />
     </>
   );

@@ -124,7 +124,7 @@ export const worksData: Work[] = [
     title: "Animated Launch Video NBN Lab",
     description: `For the launch of NBN Labs, a forward-thinking blockchain brand, our agency was tasked with crafting a high-impact animated video that would introduce them to the world with style and clarity. We designed a sleek, motion-driven brand film that captured their innovative spirit while making blockchain feel approachable and exciting.
       Blending bold typography, dynamic transitions, and playful visual elements, the animation established NBN Labs as a confident new player in the digital space ready to disrupt, connect, and inspire.`,
-    hero_image: "/images/works-4.png",
+    hero_image: "/images/gifs/nbn-lab.gif",
     hero_video: {
       vimeo_id: "1109288100",
       title: "NBN Labs launch",

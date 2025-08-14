@@ -2,7 +2,7 @@ import React from "react";
 
 const FooterNav = () => {
   return (
-    <footer className="bg-[#0B1023]">
+    <footer id="contact" className="bg-[#0B1023]">
       <div className="max-w-7xl mx-auto lg:p-0 p-4 text-white">
         <div className="lg:flex justify-between pt-10 items-center">
           <div className="lg:w-[24%] mb-4">

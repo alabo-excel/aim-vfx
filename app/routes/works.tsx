@@ -4,6 +4,18 @@ import FooterNav from "~/components/FooterNav";
 import HeaderNav from "~/components/HeaderNav";
 import { worksData } from "~/data/works";
 
+export function meta() {
+  return [
+    { title: "Our Works - AIM VFX" },
+    {
+      name: "description",
+      content:
+        "",
+    },
+  ];
+}
+
+
 const works = () => {
   return (
     <>

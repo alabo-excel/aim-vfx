@@ -55,6 +55,7 @@
 /* Apply Neulis Alt as default font */
 * {
   font-family: 'Neulis Alt', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  cursor: url('/images/cursor.png'), auto pointer;
 }
 
 body {

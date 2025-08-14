@@ -72,6 +72,7 @@ export const worksData: Work[] = [
       autoplay: false,
       loop: true,
     },
+    footer_img: "/images/works/crustnco-footer.png",
     images: [
       "/images/works/crustnco-1.gif",
       "/images/works/crustnco-2.png",
@@ -154,6 +155,7 @@ export const worksData: Work[] = [
       autoplay: false,
       loop: true,
     },
+    footer_img: "/images/works/ololade-footer.png",
     images: [
       "/images/works/ololade-brand-1.png",
       "/images/works/ololade-brand-2.png",

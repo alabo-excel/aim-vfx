@@ -216,7 +216,7 @@ export default function Home() {
             </Marquee>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 lg:px-0">
+        <div id="about" className="max-w-7xl mx-auto px-4 lg:px-0">
           <div className="flex justify-between">
             <button
               className="p-2 rounded-full text-white px-4 lg:px-6 font-medium mt-2 transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 active:scale-95 flex items-center gap-2 text-sm lg:text-base"
@@ -290,7 +290,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#0B1023] relative">
+      <section id="services" className="bg-[#0B1023] relative">
         <div className="max-w-6xl text-white mx-auto p-4 lg:px-20">
           <div className="flex justify-between px-4 lg:px-0">
             <button

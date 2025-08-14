@@ -10,24 +10,32 @@ const HeaderNav = () => {
 
   return (
     <header className="absolute w-full top-0 lg:px-10 px-4 py-4 lg:p-4 flex justify-between items-center z-50">
-      <img src="/images/logo.svg" alt="Logo" className="h-8 lg:h-auto" />
+      <Link to="/">
+        <img src="/images/logo.svg" alt="Logo" className="h-8 lg:h-auto" />
+      </Link>
 
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex my-auto text-white gap-10">
-        <Link to={'/works'}>
+        <Link to={"/works"}>
           <p className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer">
             Work
           </p>
         </Link>
-        <p className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer">
-          About
-        </p>
-        <p className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer">
-          Services
-        </p>
-        <p className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer">
-          Contact
-        </p>
+        <Link to={"/#about"}>
+          <p className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer">
+            About
+          </p>
+        </Link>
+        <Link to={"/#services"}>
+          <p className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer">
+            Services
+          </p>
+        </Link>
+        <Link to={"/#contact"}>
+          <p className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer">
+            Contact
+          </p>
+        </Link>
       </nav>
 
       {/* Mobile Menu Button */}
@@ -71,30 +79,38 @@ const HeaderNav = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center h-full gap-8 text-white text-2xl">
-          <p
-            className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer transform hover:scale-110"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Work
-          </p>
-          <p
-            className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer transform hover:scale-110"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            About
-          </p>
-          <p
-            className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer transform hover:scale-110"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Services
-          </p>
-          <p
-            className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer transform hover:scale-110"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Contact
-          </p>
+          <Link to={"/works"}>
+            <p
+              className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer transform hover:scale-110"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Work
+            </p>
+          </Link>
+          <Link to={"/#about"}>
+            <p
+              className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer transform hover:scale-110"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </p>
+          </Link>
+          <Link to={"/#services"}>
+            <p
+              className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer transform hover:scale-110"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Services
+            </p>
+          </Link>
+          <Link to={"/#contact"}>
+            <p
+              className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer transform hover:scale-110"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </p>
+          </Link>
         </div>
       </div>
     </header>

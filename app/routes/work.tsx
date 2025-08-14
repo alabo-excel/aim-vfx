@@ -124,14 +124,61 @@ export default function WorkDetail() {
               className={`rounded-2xl md:h-96 object-cover w-full ${work.images.length === 3 && index === work.images.length - 1 && "col-span-2"}`}
             />
           ))}
-          <img
-            src={work.hero_image}
-            className="col-span-2 w-full rounded-2xl overflow-hidden relative"
-            alt=""
-          />
-        </div>
-        <div className="lg:text-5xl text-3xl font-medium my-10 leading-normal">
-          Love what we did? <br /> Let’s collaborate!
+          <div className="relative col-span-2">
+            <img
+              src={work.hero_image}
+              className="w-full rounded-2xl overflow-hidden"
+              alt=""
+            />
+            <div className="flex gap-4 absolute bottom-6 right-6">
+              <Link to={"/works"}>
+                <button
+                  className="p-2 rounded-full text-white px-4 lg:px-6 font-medium mt-2 transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 active:scale-95 flex items-center gap-2 text-sm lg:text-base"
+                  style={{
+                    background: "linear-gradient(45deg, #FE71FF, #4D65F8)",
+                  }}
+                >
+                  Read Article
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    className="bi bi-arrow-up-right"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                    />
+                  </svg>
+                </button>
+              </Link>
+              <Link to={"/works"}>
+                <button
+                  className="p-2 rounded-full text-white px-4 lg:px-6 font-medium mt-2 transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 active:scale-95 flex items-center gap-2 text-sm lg:text-base"
+                  style={{
+                    background: "linear-gradient(45deg, #FE71FF, #4D65F8)",
+                  }}
+                >
+                  See Full Projects
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    className="bi bi-arrow-up-right"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                    />
+                  </svg>
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
       <div>
@@ -186,6 +233,11 @@ export default function WorkDetail() {
                 </div>
               ))}
           </Marquee>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto">
+        <div className="lg:text-5xl text-3xl font-medium my-10 leading-normal">
+          Love what we did? <br /> Let’s collaborate!
         </div>
       </div>
       <FooterNav />

@@ -32,7 +32,8 @@ export default function Home() {
 
       <section className="hero p-8 lg:p-20 lg:h-[100vh] h-[70vh] relative">
         <div className="lg:w-[60%] max-w-[700px] mx-auto lg:mt-44 mt-32">
-          <h1 className="text-2xl lg:text-4xl relative lg:z-50 text-[#0B1023] font-bold leading-tight">
+          {/* Desktop Version - Hover */}
+          <h1 className="text-2xl lg:text-4xl relative lg:z-50 text-[#0B1023] font-bold leading-tight hidden lg:block">
             <span
               className={`transition-all duration-300 ${activeOverlay ? "opacity-30 blur-sm" : ""}`}
             >
@@ -96,6 +97,76 @@ export default function Home() {
             </span>
           </h1>
 
+          {/* Mobile Version - Click */}
+          <h1 className="text-2xl lg:text-4xl relative lg:z-50 text-[#0B1023] font-bold leading-tight block lg:hidden">
+            <span
+              className={`transition-all duration-300 ${activeOverlay ? "opacity-30 blur-sm" : ""}`}
+            >
+              We create{" "}
+            </span>
+            <span
+              className={`underline cursor-pointer active:text-[#FE71FF] transition-all duration-300 ${
+                activeOverlay === "motion"
+                  ? "text-[#FE71FF] bg-[#FE71FF]/10 px-1 rounded scale-105"
+                  : activeOverlay
+                    ? "opacity-30 blur-sm"
+                    : ""
+              }`}
+              onClick={() =>
+                setActiveOverlay(activeOverlay === "motion" ? null : "motion")
+              }
+            >
+              motion
+            </span>
+            <span
+              className={`transition-all duration-300 ${activeOverlay ? "opacity-30 blur-sm" : ""}`}
+            >
+              {" "}
+              that astonishes,{" "}
+            </span>
+            <span
+              className={`underline cursor-pointer active:text-[#4D65F8] transition-all duration-300 ${
+                activeOverlay === "transforming"
+                  ? "text-[#4D65F8] bg-[#4D65F8]/10 px-1 rounded scale-105"
+                  : activeOverlay && activeOverlay !== "transforming"
+                    ? "opacity-30 blur-sm"
+                    : ""
+              }`}
+              onClick={() =>
+                setActiveOverlay(
+                  activeOverlay === "transforming" ? null : "transforming"
+                )
+              }
+            >
+              transforming stories
+            </span>
+            <span
+              className={`transition-all duration-300 ${activeOverlay ? "opacity-30 blur-sm" : ""}`}
+            >
+              {" "}
+              into unforgettable{" "}
+            </span>
+            <span
+              className={`underline cursor-pointer active:text-[#A96BFB] transition-all duration-300 ${
+                activeOverlay === "visual"
+                  ? "text-[#A96BFB] bg-[#A96BFB]/10 px-1 rounded scale-105"
+                  : activeOverlay && activeOverlay !== "visual"
+                    ? "opacity-30 blur-sm"
+                    : ""
+              }`}
+              onClick={() =>
+                setActiveOverlay(activeOverlay === "visual" ? null : "visual")
+              }
+            >
+              visual experiences
+            </span>
+            <span
+              className={`transition-all duration-300 ${activeOverlay ? "opacity-30 blur-sm" : ""}`}
+            >
+              .
+            </span>
+          </h1>
+
           <div className="lg:w-[30%] mt-8 mx-auto">
             <p className="text-white">
               Watching how light shifts, water flows, or objects interact in
@@ -106,65 +177,156 @@ export default function Home() {
 
         {/* Dynamic Overlays */}
         {activeOverlay && (
-          <div className="fixed bg-[#0B1023] w-full h-full left-0 top-0 z-40 transition-all duration-300">
-            {activeOverlay === "motion" && (
-              <div className="grid lg:grid-cols-3 gap-10 lg:my-32 my-14 mx-10">
-                <img
-                  className="rounded-xl"
-                  src="/images/gifs/motion/001.gif"
-                  alt=""
-                />
-                <img
-                  className="rounded-xl lg:mt-44"
-                  src="/images/gifs/motion/002.gif"
-                  alt=""
-                />
-                <img
-                  className="rounded-xl"
-                  src="/images/gifs/motion/003.gif"
-                  alt=""
-                />
-              </div>
-            )}
-            {activeOverlay === "transforming" && (
-              <div className="grid lg:grid-cols-3 gap-10 lg:my-32 my-14 mx-10">
-                <img
-                  className="rounded-xl lg:mt-52"
-                  src="/images/gifs/transforming-stories/001.gif"
-                  alt=""
-                />
-                <img
-                  className="rounded-xl "
-                  src="/images/gifs/transforming-stories/003.gif"
-                  alt=""
-                />
-                <img
-                  className="rounded-xl lg:mt-32"
-                  src="/images/gifs/transforming-stories/002.gif"
-                  alt=""
-                />
-              </div>
-            )}
-            {activeOverlay === "visual" && (
-              <div className="grid lg:grid-cols-3 gap-10 lg:my-32 my-14 mx-10">
-                <img
-                  className="rounded-xl"
-                  src="/images/gifs/visual-experience/001.gif"
-                  alt=""
-                />
-                <img
-                  className="rounded-xl lg:mt-72"
-                  src="/images/gifs/visual-experience/002.gif"
-                  alt=""
-                />
-                <img
-                  className="rounded-xl"
-                  src="/images/gifs/visual-experience/003.gif"
-                  alt=""
-                />
-              </div>
-            )}
-          </div>
+          <>
+            {/* Desktop Overlay (unchanged) */}
+
+            <div
+              onClick={() => setActiveOverlay(null)}
+              className="fixed bg-[#0B1023] w-full h-full left-0 top-0 z-40 transition-all duration-300 hidden lg:block"
+            >
+              {activeOverlay === "motion" && (
+                <div className="grid lg:grid-cols-3 gap-10 lg:my-32 my-14 mx-10">
+                  <img
+                    className="rounded-xl"
+                    src="/images/gifs/motion/001.gif"
+                    alt=""
+                  />
+                  <img
+                    className="rounded-xl lg:mt-44"
+                    src="/images/gifs/motion/002.gif"
+                    alt=""
+                  />
+                  <img
+                    className="rounded-xl"
+                    src="/images/gifs/motion/003.gif"
+                    alt=""
+                  />
+                </div>
+              )}
+              {activeOverlay === "transforming" && (
+                <div className="grid lg:grid-cols-3 gap-10 lg:my-32 my-14 mx-10">
+                  <img
+                    className="rounded-xl lg:mt-52"
+                    src="/images/gifs/transforming-stories/001.gif"
+                    alt=""
+                  />
+                  <img
+                    className="rounded-xl "
+                    src="/images/gifs/transforming-stories/003.gif"
+                    alt=""
+                  />
+                  <img
+                    className="rounded-xl lg:mt-32"
+                    src="/images/gifs/transforming-stories/002.gif"
+                    alt=""
+                  />
+                </div>
+              )}
+              {activeOverlay === "visual" && (
+                <div className="grid lg:grid-cols-3 gap-10 lg:my-32 my-14 mx-10">
+                  <img
+                    className="rounded-xl"
+                    src="/images/gifs/visual-experience/001.gif"
+                    alt=""
+                  />
+                  <img
+                    className="rounded-xl lg:mt-72"
+                    src="/images/gifs/visual-experience/002.gif"
+                    alt=""
+                  />
+                  <img
+                    className="rounded-xl"
+                    src="/images/gifs/visual-experience/003.gif"
+                    alt=""
+                  />
+                </div>
+              )}
+            </div>
+
+            {/* Mobile Overlay */}
+            <div className="fixed left-0 top-0 w-full h-full z-50 bg-[#0B1023]/80 backdrop-blur-sm block lg:hidden flex flex-col justify-center items-center">
+              {/* Close Button */}
+              <button
+                onClick={() => setActiveOverlay(null)}
+                className="absolute bottom-4 left-4 z-50 p-3 rounded-full bg-white/20 hover:bg-white/40 transition-all duration-300 ease-in-out transform hover:scale-110"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  fill="white"
+                  className="bi bi-x"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                </svg>
+              </button>
+              {/* Marquee Images */}
+              {activeOverlay === "motion" && (
+                <div className="w-full">
+                  <Marquee speed={60} pauseOnHover>
+                    <img
+                      src="/images/gifs/motion/001.gif"
+                      alt=""
+                      className="rounded-xl mx-4 w-64 h-40 object-cover"
+                    />
+                    <img
+                      src="/images/gifs/motion/002.gif"
+                      alt=""
+                      className="rounded-xl mx-4 w-64 h-40 object-cover mt-44"
+                    />
+                    <img
+                      src="/images/gifs/motion/003.gif"
+                      alt=""
+                      className="rounded-xl mx-4 w-64 h-40 -mt-40 object-cover"
+                    />
+                  </Marquee>
+                </div>
+              )}
+              {activeOverlay === "transforming" && (
+                <div className="w-full">
+                  <Marquee speed={60} pauseOnHover>
+                    <img
+                      src="/images/gifs/transforming-stories/001.gif"
+                      alt=""
+                      className="rounded-xl mx-4 w-64 h-40 object-cover mt-52"
+                    />
+                    <img
+                      src="/images/gifs/transforming-stories/003.gif"
+                      alt=""
+                      className="rounded-xl mx-4 w-64 h-40 object-cover"
+                    />
+                    <img
+                      src="/images/gifs/transforming-stories/002.gif"
+                      alt=""
+                      className="rounded-xl mx-4 w-64 h-40 object-cover mt-32"
+                    />
+                  </Marquee>
+                </div>
+              )}
+              {activeOverlay === "visual" && (
+                <div className="w-full">
+                  <Marquee speed={60} pauseOnHover>
+                    <img
+                      src="/images/gifs/visual-experience/001.gif"
+                      alt=""
+                      className="rounded-xl mx-4 w-64 h-40 -mt-20 object-cover"
+                    />
+                    <img
+                      src="/images/gifs/visual-experience/002.gif"
+                      alt=""
+                      className="rounded-xl mx-4 w-64 h-40 object-cover mt-72"
+                    />
+                    <img
+                      src="/images/gifs/visual-experience/003.gif"
+                      alt=""
+                      className="rounded-xl mx-4 w-64 h-40 object-cover"
+                    />
+                  </Marquee>
+                </div>
+              )}
+            </div>
+          </>
         )}
       </section>
 

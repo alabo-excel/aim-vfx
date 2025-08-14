@@ -55,7 +55,13 @@
 /* Apply Neulis Alt as default font */
 * {
   font-family: 'Neulis Alt', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  cursor: url('/images/cursor.png'), auto pointer;
+  cursor: url('/images/cursor.png'), pointer;
+}
+
+input,
+button {
+  cursor: url('/images/cursor.png'), pointer !important;
+
 }
 
 body {
@@ -131,10 +137,13 @@ body {
 
 /* Custom Loader Animations */
 @keyframes letterGlow {
-  0%, 100% {
+
+  0%,
+  100% {
     text-shadow: 0 0 10px currentColor;
     transform: scale(1);
   }
+
   50% {
     text-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
     transform: scale(1.1);
@@ -142,9 +151,12 @@ body {
 }
 
 @keyframes logoFloat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -154,18 +166,23 @@ body {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
 @keyframes pulseGlow {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 5px rgba(254, 113, 255, 0.5);
   }
+
   50% {
     box-shadow: 0 0 20px rgba(254, 113, 255, 0.8), 0 0 30px rgba(77, 101, 248, 0.5);
   }

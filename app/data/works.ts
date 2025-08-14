@@ -72,7 +72,6 @@ export const worksData: Work[] = [
       autoplay: false,
       loop: true,
     },
-    footer_img: "",
     images: [
       "/images/works/crustnco-1.gif",
       "/images/works/crustnco-2.png",
@@ -93,6 +92,7 @@ export const worksData: Work[] = [
       "/images/works/roqqu-3.png",
       "/images/works/roqqu-4.png",
     ],
+    footer_img: "/images/works/roqqu-footer.gif",
     hero_video: {
       vimeo_id: "1109289226",
       title: "Roqqu “Need Cash Fast?”",
@@ -133,6 +133,7 @@ export const worksData: Work[] = [
       autoplay: false,
       loop: true,
     },
+    footer_img: "/images/works/nbn-footer-img.gif",
     images: [
       "/images/works/nbn-lab-1.png",
       "/images/works/nbn-lab-2.png",

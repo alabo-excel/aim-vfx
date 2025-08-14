@@ -9,6 +9,7 @@ const works = () => {
     <>
       <HeaderNav />
       <section className="hero p-8 lg:p-20 relative">
+        
         <h2 className="text-center text-2xl mt-10 lg:text-4xl text-[#0B1023] font-bold">
           Our Works
         </h2>

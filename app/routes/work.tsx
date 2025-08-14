@@ -97,6 +97,24 @@ export default function WorkDetail() {
   return (
     <>
       <section className="max-w-7xl mx-auto my-10 md:p-0 px-4">
+        <button
+          onClick={() => window.history.back()}
+          className="my-3 p-3 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white transition-all duration-300 ease-in-out transform hover:scale-110 shadow-lg hover:shadow-xl"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            className="bi bi-arrow-left text-[#0B1023]"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+            />
+          </svg>
+        </button>
         <p className="text-[#909091] text-sm mb-2">AIM VFX STUDIO</p>
         <h2 className="lg:text-4xl text-2xl font-bold">{work.title}</h2>
         <div className="my-8">
@@ -126,7 +144,7 @@ export default function WorkDetail() {
           ))}
           <div className="relative col-span-2">
             <img
-              src={work.hero_image}
+              src={work.footer_img || work.hero_image}
               className="w-full rounded-2xl overflow-hidden"
               alt=""
             />

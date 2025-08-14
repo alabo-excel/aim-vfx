@@ -171,27 +171,29 @@ export default function Home() {
       <section className="text-[#0B1023]">
         <div>
           <div className="flex max-w-7xl mt-10 mx-auto justify-between px-4 lg:px-0">
-            <button
-              className="p-2 rounded-full text-white px-4 lg:px-6 font-medium mt-2 transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 active:scale-95 flex items-center gap-2 text-sm lg:text-base"
-              style={{
-                background: "linear-gradient(45deg, #FE71FF, #4D65F8)",
-              }}
-            >
-              see all works
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-arrow-up-right"
-                viewBox="0 0 16 16"
+            <Link to={"/works"}>
+              <button
+                className="p-2 rounded-full text-white px-4 lg:px-6 font-medium mt-2 transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 active:scale-95 flex items-center gap-2 text-sm lg:text-base"
+                style={{
+                  background: "linear-gradient(45deg, #FE71FF, #4D65F8)",
+                }}
               >
-                <path
-                  fillRule="evenodd"
-                  d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
-                />
-              </svg>
-            </button>
+                see all works
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="bi bi-arrow-up-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"
+                  />
+                </svg>
+              </button>
+            </Link>
             <h1 className="text-2xl lg:text-4xl font-bold mr-4 my-auto lg:mr-20">
               Selected Works
             </h1>

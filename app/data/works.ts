@@ -12,6 +12,7 @@ export interface Work {
     loop?: boolean;
   };
   images: string[];
+  footer_img?: string;
 }
 
 export const worksData: Work[] = [
@@ -71,11 +72,12 @@ export const worksData: Work[] = [
       autoplay: false,
       loop: true,
     },
+    footer_img: "",
     images: [
-      "/images/works/crustnco-1.png",
+      "/images/works/crustnco-1.gif",
       "/images/works/crustnco-2.png",
       "/images/works/crustnco-3.png",
-      "/images/works/crustnco-3.png",
+      "/images/works/crustnco-4.gif",
     ],
   },
   {

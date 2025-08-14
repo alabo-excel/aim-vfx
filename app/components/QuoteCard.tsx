@@ -30,7 +30,7 @@ const QuoteCard = () => {
       {active === "length" ? (
         <div className="my-4 bg-[#E1E7FF] lg:flex justify-between rounded-md p-2 transform transition-all duration-500 ease-in-out animate-fadeIn">
           <p className="text-sm lg:ml-6  my-auto text-[#5064F7] transition-colors duration-300">
-            <strong>Video Length</strong> (in Seconds, 10s minimum)
+            <strong>Video Length</strong> (in Seconds, 15s minimum)
           </p>
           <input
             onChange={(e) => {
@@ -58,11 +58,11 @@ const QuoteCard = () => {
       )}
       {/* <button onClick={() => getValue()} className='bg-black text-white p-4 rounded-xl w-full'>Get Quote</button> */}
       {active === "length"
-        ? Number(quote) >= 10 && (
+        ? Number(quote) >= 15 && (
             <div className="mt-16 transform transition-all duration-700 ease-in-out animate-slideUp">
               <p className="text-xl text-[#B2B2B2] mb-1 transition-colors duration-300">Amount</p>
               <p className="text-3xl text-[#0B1023] font-bold transition-all duration-500 hover:text-[#5064F7] hover:scale-110">
-                ${parseInt(quote, 10) * 20 || 0}
+                ${parseInt(quote, 10) * 100 || 0}
               </p>
             </div>
           )
@@ -70,7 +70,7 @@ const QuoteCard = () => {
             <div className="mt-8 transform transition-all duration-700 ease-in-out animate-slideUp">
               <p className="text-xl text-[#B2B2B2] mb-1 transition-colors duration-300">Single Video Length</p>
               <p className="text-3xl text-[#0B1023] font-bold transition-all duration-500 hover:text-[#5064F7] hover:scale-110">
-                {Math.floor(Number(budget) / 20)}s
+                {Math.floor(Number(budget) / 100)}s
               </p>
             </div>
           )}

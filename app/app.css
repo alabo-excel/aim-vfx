@@ -59,8 +59,9 @@
 }
 
 input,
-button {
-  cursor: url('/images/cursor.png'), pointer !important;
+button,
+a {
+  cursor: url('/images/cursor-1.png'), pointer !important;
 
 }
 

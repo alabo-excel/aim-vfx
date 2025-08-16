@@ -27,14 +27,14 @@ const works = () => {
         </h2>
       </section>
       <section className="max-w-7xl mx-auto my-10">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid lg:grid-cols-2 gap-4">
           {worksData.map((work, index) => (
             <div key={work.id} className="mx-2 lg:mx-4">
               <Link to={`/work?slug=${work.slug}`} className="block group">
                 <img
                   src={work.hero_image}
                   alt={work.title}
-                  className="w-full lg:h-96 h-52 max-w-xs lg:max-w-none object-cover"
+                  className="w-full lg:h-96 h-52 lg:max-w-none object-cover"
                 />
                 <p className="my-3 text-sm lg:text-base">{work.title}</p>
               </Link>

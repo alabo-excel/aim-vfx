@@ -68,24 +68,26 @@ export default function App() {
     const handleMouseDown = () => setIsClicking(true);
     const handleMouseUp = () => setIsClicking(false);
 
-    document.addEventListener('mousemove', updateCursorPosition);
-    document.addEventListener('mousedown', handleMouseDown);
-    document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener("mousemove", updateCursorPosition);
+    document.addEventListener("mousedown", handleMouseDown);
+    document.addEventListener("mouseup", handleMouseUp);
 
     // Add hover listeners to interactive elements
-    const interactiveElements = document.querySelectorAll('button, a, [role="button"], .cursor-pointer');
-    interactiveElements.forEach(element => {
-      element.addEventListener('mouseenter', handleMouseEnter);
-      element.addEventListener('mouseleave', handleMouseLeave);
+    const interactiveElements = document.querySelectorAll(
+      'button, a, [role="button"], .cursor-pointer'
+    );
+    interactiveElements.forEach((element) => {
+      element.addEventListener("mouseenter", handleMouseEnter);
+      element.addEventListener("mouseleave", handleMouseLeave);
     });
 
     return () => {
-      document.removeEventListener('mousemove', updateCursorPosition);
-      document.removeEventListener('mousedown', handleMouseDown);
-      document.removeEventListener('mouseup', handleMouseUp);
-      interactiveElements.forEach(element => {
-        element.removeEventListener('mouseenter', handleMouseEnter);
-        element.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener("mousemove", updateCursorPosition);
+      document.removeEventListener("mousedown", handleMouseDown);
+      document.removeEventListener("mouseup", handleMouseUp);
+      interactiveElements.forEach((element) => {
+        element.removeEventListener("mouseenter", handleMouseEnter);
+        element.removeEventListener("mouseleave", handleMouseLeave);
       });
     };
   }, [loading]);
@@ -94,75 +96,16 @@ export default function App() {
     return (
       <div className="fixed inset-0 bg-[#0B1023] flex items-center justify-center z-50">
         <div className="text-center">
-          {/* AIM Letters Animation */}
-          {/* <div className="flex items-center justify-center space-x-4 mb-8">
-            <span className="text-8xl font-neulis-black text-white animate-bounce animate-letterGlow" style={{ 
-              animationDelay: '0s', 
-              color: '#FE71FF' 
-            }}>
-              A
-            </span>
-            <span className="text-8xl font-neulis-black text-white animate-bounce animate-letterGlow" style={{ 
-              animationDelay: '0.2s', 
-              color: '#A96BFB' 
-            }}>
-              I
-            </span>
-            <span className="text-8xl font-neulis-black text-white animate-bounce animate-letterGlow" style={{ 
-              animationDelay: '0.4s', 
-              color: '#4D65F8' 
-            }}>
-              M
-            </span>
-          </div> */}
-
-          {/* Logo Animation */}
-          {/* <div className="mb-6 flex justify-center">
-            <div className="w-32 h-32 rounded-full border-4 animate-gradientSpin animate-logoFloat animate-pulseGlow flex items-center justify-center">
-              <img 
-                src="/images/logo.svg" 
-                alt="AIM VFX Logo" 
-                className="w-20 h-20 animate-spin"
-                style={{ animationDuration: '4s' }}
-              />
-            </div>
-          </div> */}
-
-          {/* Loading Text */}
           <img
-            src="/images/logo.svg"
-            alt="AIM VFX Logo"
-            className="w-20 h-20 mx-auto"
-            // style={{ animationDuration: "4s" }}
+            src="/images/loader-desktop.gif"
+            className="lg:block hidden"
+            alt=""
           />
-          <p className="text-white text-xl font-neulis-medium mb-4 animate-pulse">
-            Acing the Impossible
-          </p>
-
-          {/* Progress Dots */}
-          <div className="flex justify-center space-x-2">
-            <div
-              className="w-4 h-4 rounded-full animate-bounce"
-              style={{
-                backgroundColor: "#FE71FF",
-                animationDelay: "0s",
-              }}
-            ></div>
-            <div
-              className="w-4 h-4 rounded-full animate-bounce"
-              style={{
-                backgroundColor: "#A96BFB",
-                animationDelay: "0.1s",
-              }}
-            ></div>
-            <div
-              className="w-4 h-4 rounded-full animate-bounce"
-              style={{
-                backgroundColor: "#4D65F8",
-                animationDelay: "0.2s",
-              }}
-            ></div>
-          </div>
+          <img
+            src="/images/loader-mobile.gif"
+            className="lg:hidden block"
+            alt=""
+          />
         </div>
       </div>
     );
@@ -173,7 +116,7 @@ export default function App() {
       <Outlet />
       {/* Custom Cursor */}
       <div
-        className={`custom-cursor ${isHovering ? 'hover' : ''} ${isClicking ? 'click' : ''}`}
+        className={`custom-cursor ${isHovering ? "hover" : ""} ${isClicking ? "click" : ""}`}
         style={{
           left: `${cursorPosition.x}px`,
           top: `${cursorPosition.y}px`,

@@ -1,6 +1,17 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 
+export function meta() {
+  return [
+    { title: "Growth and Events - AIM VFX" },
+    {
+      name: "description",
+      content:
+        "",
+    },
+  ];
+}
+
 export default function Enquiry() {
   return (
     <div className="bg-[#0C1023] min-h-screen text-white font-neulis-regular">

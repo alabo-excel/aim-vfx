@@ -5,7 +5,26 @@ export default function Enquiry() {
   return (
     <div className="bg-[#0C1023] min-h-screen text-white font-neulis-regular">
       {/* Header Section */}
+
       <div className="max-w-7xl mx-auto pt-12 px-4">
+        <button
+          onClick={() => window.history.back()}
+          className="my-3 p-3 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white transition-all duration-300 ease-in-out transform hover:scale-110 shadow-lg hover:shadow-xl"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            className="bi bi-arrow-left text-[#0B1023]"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+            />
+          </svg>
+        </button>
         <h1 className="text-4xl md:text-5xl font-bold mb-8">
           Create Great{" "}
           <span className="bg-gradient-to-r from-[#FE71FF] to-[#4D65F8] bg-clip-text text-transparent">
@@ -52,7 +71,7 @@ export default function Enquiry() {
       {/* Who We Work With */}
       <div className="mt-20">
         <div className="max-w-7xl mx-auto ">
-          <div className="max-w-xl ml-auto">
+          <div className="max-w-xl p-4 ml-auto">
             <h2 className="text-4xl mb-4">Who We Work With</h2>
             <p className="text-[#B2B2B2] mb-8">
               We partner with people who don’t just want an event. They want
@@ -102,7 +121,7 @@ export default function Enquiry() {
           </Marquee>
         </div>
         <div className="max-w-7xl mx-auto ">
-          <div className="max-w-xl ml-auto">
+          <div className="max-w-xl p-4 ml-auto">
             <p className="text-[#B2B2B2] mb-8">
               If your goal is registrations, revenue, or recognition at scale,
               you’re our kind of client.
@@ -160,24 +179,24 @@ export default function Enquiry() {
           </p>
         </div>
         <div className="mb-8">
-          <div className="grid grid-cols-3 gap-4 mb-6 md:mb-0">
+          <div className="lg:grid lg:grid-cols-3 gap-4 mb-6 md:mb-0">
             <img
               src="/images/frame.png"
               alt="Indaba 2025"
               className="rounded-xl w-full col-span-2 h-40 object-cover"
             />
             <img
-              src="/images/frame.png"
+              src="/images/frame-2.png"
               alt="Indaba 2025"
               className="rounded-xl w-full h-40 object-cover"
             />
-            <div className="col-span-3 gap-6 mt-6 flex justify-between">
+            <div className="col-span-3 gap-6 mt-6 lg:flex justify-between">
               <img
                 src="/images/frame.png"
                 alt="Indaba 2025"
-                className="rounded-xl w-1/2 h-40 object-cover"
+                className="rounded-xl lg:w-1/2 w-full h-40 object-cover"
               />
-              <div className="w-1/2">
+              <div className="lg:w-1/2">
                 <h3 className="text-xl mb-2">Our Approach:</h3>
                 <ul className="text-[#B2B2B2] mb-4 space-y-3">
                   <li>Defined a clear event value proposition.</li>
@@ -194,8 +213,8 @@ export default function Enquiry() {
           </div>
         </div>
 
-        <div className="flex justify-between gap-4 mb-4">
-          <div className="w-1/2">
+        <div className="lg:flex justify-between gap-4 mb-4">
+          <div className="lg:w-1/2 mb-4">
             <span className="bg-gradient-to-r from-[#FE71FF] to-[#4D65F8] bg-clip-text text-transparent font-bold text-lg">
               The Results
             </span>
@@ -218,7 +237,7 @@ export default function Enquiry() {
               </li>
             </ul>
           </div>
-          <div className="w-1/2">
+          <div className="lg:w-1/2 ">
             <span className="bg-gradient-to-r from-[#FE71FF] to-[#4D65F8] bg-clip-text text-transparent font-bold text-lg">
               The Impact
             </span>
@@ -234,11 +253,11 @@ export default function Enquiry() {
 
       {/* Other Recent Projects */}
       <div className="max-w-7xl mx-auto px-4 mt-12 border-y border-white py-20">
-        <div className="flex justify-between">
-          <div className="w-1/2">
+        <div className="lg:flex justify-between">
+          <div className="lg:w-1/2">
             <h2 className="text-4xl mb-4">Other Recent Projects</h2>
           </div>
-          <div className="w-1/2 gap-4 text-[#B2B2B2] space-y-4">
+          <div className="lg:w-1/2 gap-4 text-[#B2B2B2] space-y-4">
             <div>
               <span className="font-bold text-white">
                 Boyode Conference 2025
@@ -262,11 +281,11 @@ export default function Enquiry() {
 
       {/* Why Work With Us */}
       <div className="max-w-7xl mx-auto px-4 py-20 border-b border-white">
-        <div className="flex justify-between">
-          <div className="w-1/2">
+        <div className="lg:flex justify-between">
+          <div className="lg:w-1/2">
             <h2 className="text-4xl mb-4">Why Work With Us</h2>
           </div>
-          <div className="w-1/2 md:flex gap-8">
+          <div className="lg:w-1/2 md:flex gap-8">
             <div className="md:w-2/3 text-[#B2B2B2] mb-4">
               Because we’ve lived on both sides. We’ve seen events crumble from
               weak promotion, poor timing, and missed details. And we’ve built a
@@ -287,21 +306,21 @@ export default function Enquiry() {
       </div>
 
       {/* Call to Action */}
-      <div className="max-w-7xl mx-auto px-4 mt-12 pb-16 flex justify-between">
+      <div className="max-w-7xl mx-auto px-4 mt-12 pb-16 lg:flex justify-between">
         <div className="w-1/2"></div>
-        <div className="w-1/2">
+        <div className="lg:w-1/2">
           <div className="mb-6 md:mb-0">
             <h2 className="text-2xl mb-2">
               Book a Free 15-Minute Strategy Call
             </h2>
           </div>
-          <div className="flex gap-8">
-            <button className="rounded-full w-52 text-lg px-8 py-3 boder-btn">
+          <div className="lg:flex gap-8">
+            <button className="rounded-full lg:w-52 w-full text-lg px-8 py-3 boder-btn">
               <span className="bg-gradient-to-r from-[#FE71FF] to-[#4D65F8] bg-clip-text text-transparent">
                 Book Now
               </span>
             </button>
-            <div className="text-[#B2B2B2] text-sm max-w-md my-auto">
+            <div className="text-[#B2B2B2] text-sm max-w-md lg:my-auto my-4">
               Let’s define the outcome that matters most — registrations,
               sponsors, or revenue.
             </div>

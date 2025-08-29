@@ -36,6 +36,12 @@ const HeaderNav = () => {
             Contact
           </p>
         </Link>
+        <Link to={"/growth-events"}>
+          <p className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer">
+            Growth/Events
+          </p>
+        </Link>
+        
       </nav>
 
       {/* Mobile Menu Button */}
@@ -109,6 +115,14 @@ const HeaderNav = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
+            </p>
+          </Link>
+           <Link to={"/growth-events"}>
+            <p
+              className="hover:text-[#FE71FF] transition-colors duration-300 cursor-pointer transform hover:scale-110"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Growth/Events
             </p>
           </Link>
         </div>

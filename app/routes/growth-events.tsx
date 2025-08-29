@@ -314,13 +314,13 @@ export default function Enquiry() {
               Book a Free 15-Minute Strategy Call
             </h2>
           </div>
-          <div className="lg:flex gap-8">
+          <div className="lg:flex gap-8 mt-4">
             <button className="rounded-full lg:w-52 w-full text-lg px-8 py-3 boder-btn">
               <span className="bg-gradient-to-r from-[#FE71FF] to-[#4D65F8] bg-clip-text text-transparent">
                 Book Now
               </span>
             </button>
-            <div className="text-[#B2B2B2] text-sm max-w-md lg:my-auto my-4">
+            <div className="text-[#B2B2B2] text-sm max-w-sm lg:my-auto my-4">
               Let’s define the outcome that matters most — registrations,
               sponsors, or revenue.
             </div>

@@ -6,8 +6,7 @@ export function meta() {
     { title: "Growth and Events - AIM VFX" },
     {
       name: "description",
-      content:
-        "",
+      content: "",
     },
   ];
 }
@@ -181,7 +180,7 @@ export default function Enquiry() {
             INDABA 2025
           </span>
         </h2>
-        <div className="max-w-2xl my-4">
+        <div className="max-w-2xl my-6">
           <h3 className="mb-2 text-xl">The Challenge:</h3>
           <p className="text-[#B2B2B2] mb-4">
             A US personal brand wanted to host a major summit in Africa with
@@ -192,23 +191,23 @@ export default function Enquiry() {
         <div className="mb-8">
           <div className="lg:grid lg:grid-cols-3 gap-4 mb-6 md:mb-0">
             <img
-              src="/images/frame.png"
+              src="/images/indaba-2.jpg"
               alt="Indaba 2025"
-              className="rounded-xl w-full col-span-2 h-40 object-cover"
+              className="rounded-xl w-full col-span-2 lg:mb-0 mb-4 h-96 object-cover"
             />
             <img
-              src="/images/frame-2.png"
+              src="/images/indaba-3.jpg"
               alt="Indaba 2025"
-              className="rounded-xl w-full h-40 object-cover"
+              className="rounded-xl w-full h-96 object-cover"
             />
             <div className="col-span-3 gap-6 mt-6 lg:flex justify-between">
               <img
-                src="/images/frame.png"
+                src="/images/indaba-1.jpg"
                 alt="Indaba 2025"
-                className="rounded-xl lg:w-1/2 w-full h-40 object-cover"
+                className="rounded-xl lg:w-1/2 w-full h-80 object-cover"
               />
-              <div className="lg:w-1/2">
-                <h3 className="text-xl mb-2">Our Approach:</h3>
+              <div className="lg:w-1/2 my-auto">
+                <h3 className="text-xl my-4">Our Approach:</h3>
                 <ul className="text-[#B2B2B2] mb-4 space-y-3">
                   <li>Defined a clear event value proposition.</li>
                   <li>Built a conversion-focused landing page.</li>

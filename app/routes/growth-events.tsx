@@ -43,12 +43,7 @@ export default function Enquiry() {
         </h1>
         <div className="md:flex gap-12 mb-12">
           <div className="flex-shrink-0 flex justify-center items-center w-full md:w-1/2 mb-8 md:mb-0">
-            <div className="bg-[#23253A] rounded-xl w-full h-full flex items-center justify-center">
-              <svg width="64" height="64" fill="#B2B2B2" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="12" fill="#23253A" />
-                <polygon points="10,8 16,12 10,16" fill="#B2B2B2" />
-              </svg>
-            </div>
+            <video src="/images/Aimvfx-events-Video.mp4" controls loop autoPlay muted className="w-full h-auto rounded-lg"></video>
           </div>
           <div className="md:w-1/2">
             <h2 className="text-xl font-bold mb-2">
